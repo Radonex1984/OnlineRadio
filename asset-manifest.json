@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/Radonex1984/OnlineRadio/static/css/main.31352096.css",
+    "main.js": "/Radonex1984/OnlineRadio/static/js/main.e8e04b1d.js",
+    "static/js/787.76402c7e.chunk.js": "/Radonex1984/OnlineRadio/static/js/787.76402c7e.chunk.js",
+    "static/media/station.png": "/Radonex1984/OnlineRadio/static/media/station.5332baa0fdf64a58f969.png",
+    "index.html": "/Radonex1984/OnlineRadio/index.html",
+    "main.31352096.css.map": "/Radonex1984/OnlineRadio/static/css/main.31352096.css.map",
+    "main.e8e04b1d.js.map": "/Radonex1984/OnlineRadio/static/js/main.e8e04b1d.js.map",
+    "787.76402c7e.chunk.js.map": "/Radonex1984/OnlineRadio/static/js/787.76402c7e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.31352096.css",
+    "static/js/main.e8e04b1d.js"
+  ]
+}
