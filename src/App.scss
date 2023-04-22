@@ -1,0 +1,318 @@
+@import url("https://fonts.googleapis.com/css2?family=Poltawski+Nowy&display=swap");
+
+@import "~react-h5-audio-player/lib/styles.css";
+
+.App {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+body {
+  background: rgb(228, 227, 231);
+  background: linear-gradient(to right, rgb(40, 31, 53), rgb(110, 104, 122));
+  color: rgb(236, 228, 228);
+  font-family: "Poltawski Nowy", serif;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.navbar-brand {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.navbar-links {
+  list-style: none;
+  display: none; /* hide navbar links on small screens */
+}
+
+.navbar-link {
+  margin: 0 10px;
+  font-size: 1.2rem;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.menu-icon {
+  display: block;
+  cursor: pointer;
+  color: #fff;
+  font-size: 1.5rem;
+  margin-right: 10px;
+}
+
+.menu-icon:hover {
+  color: #e36bae;
+}
+
+.active {
+  text-decoration: underline;
+}
+
+header {
+  margin-top: 70px;
+}
+
+h1 {
+  margin: 1em 0 0 0;
+  font-size: 3rem;
+}
+
+h2 {
+  margin-bottom: 2em;
+}
+
+.active {
+  text-decoration: underline;
+}
+
+.radio {
+  max-width: 60em;
+  width: 100%;
+}
+
+.search-container {
+  max-width: 60em;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.search-input {
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+  width: 250px;
+  outline: none;
+  font-family: "Poltawski Nowy", serif;
+}
+
+.filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 2em;
+  font-size: 1.2rem;
+  width: 100%;
+
+  span {
+    margin: 0.25em;
+    border: 1px solid #e36bae;
+    border-radius: 10px;
+    padding: 0.25em 0.75em;
+
+    &:hover {
+      cursor: pointer;
+      background: linear-gradient(to bottom right, #e36bae, #fb743e);
+    }
+  }
+
+  .selected {
+    background: linear-gradient(to bottom right, #e36bae, #fb743e);
+  }
+}
+
+.stations {
+  display: grid;
+  grid-template-columns: repeat(3, 33%);
+  width: 100%;
+}
+
+.station {
+  font-size: 1.2em;
+  border: 1px solid rgb(76, 62, 95);
+  margin: 0.25em;
+  border-radius: 10px;
+  padding: 0, 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    border-color: #e36bae;
+  }
+}
+
+.stationName {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 1em;
+  width: 100%;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.name {
+  width: 100%;
+  text-align: center;
+}
+
+img {
+  display: block;
+  width: 2.5em;
+  height: 2.5em;
+  border-radius: 50%;
+  border: 2px solid rgb(76, 62, 95);
+  margin: 0 0.25em;
+}
+
+.radio {
+  padding-bottom: 70px;
+
+  /* add padding to make space for the player */
+}
+
+.station-name {
+  position: fixed;
+  display: inline-block;
+  bottom: 1;
+  margin-left: 300px;
+  width: 100%;
+  max-width: fit-content;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  color: #c04747;
+}
+.player {
+  position: fixed;
+  display: flex;
+  bottom: 0;
+  width: 100%;
+  max-width: 60em;
+
+  background-color: #ffffff;
+  box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.2);
+
+  @media screen and (max-width: 768px) {
+    .player {
+      flex-direction: column;
+      height: 80px;
+      padding: 10px;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .rhap_controls-section {
+      flex-wrap: wrap;
+    }
+
+    .rhap_volume-controls {
+      margin-top: 10px;
+    }
+  }
+
+  .rhap_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    padding: 10px;
+    border-radius: 6px;
+
+    .rhap_header {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+
+      .rhap_title {
+        font-size: 18px;
+        font-weight: bold;
+      }
+
+      .rhap_close-btn {
+        cursor: pointer;
+      }
+    }
+
+    .rhap_progress-section {
+      width: 100%;
+    }
+
+    .rhap_controls-section {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 10px;
+
+      .rhap_additional-controls {
+        display: flex;
+        align-items: center;
+
+        button {
+          background: none;
+          border: none;
+          cursor: pointer;
+          outline: none;
+          margin-left: 10px;
+
+          &:disabled {
+            cursor: not-allowed;
+          }
+        }
+      }
+
+      .rhap_main-controls {
+        display: flex;
+        align-items: center;
+
+        button {
+          background: none;
+          border: none;
+          cursor: pointer;
+          outline: none;
+          margin-left: 10px;
+
+          &:disabled {
+            cursor: not-allowed;
+          }
+        }
+      }
+
+      .rhap_volume-controls {
+        display: flex;
+        align-items: center;
+
+        .rhap_volume-container {
+          margin-left: 10px;
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .stations {
+    grid-template-columns: repeat(2, 50%);
+  }
+
+  img {
+    display: none;
+  }
+}
