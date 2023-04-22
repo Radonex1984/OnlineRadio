@@ -17,7 +17,14 @@ export default function Radio() {
   }, [stationFilter, searchText]);
 
   const setupApi = async (stationFilter, searchText) => {
-    const api = new RadioBrowserApi(fetch.bind(window), "online_radio");
+    const api = new RadioBrowserApi(
+      {
+        baseUrl: "http://all.api.radio-browser.info",
+        secure: true,
+      },
+      fetch.bind(window),
+      "online_radio"
+    );
 
     const stations = await api
       .searchStations({
