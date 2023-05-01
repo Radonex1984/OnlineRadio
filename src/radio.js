@@ -19,11 +19,11 @@ export default function Radio() {
   const setupApi = async (stationFilter, searchText) => {
     const api = new RadioBrowserApi(
       {
-        baseUrl: "http://all.api.radio-browser.info",
+        baseUrl: "https://all.api.radio-browser.info",
         secure: true,
       },
       fetch.bind(window),
-      "online_radio"
+      "https://all.api.radio-browser.info/json""
     );
 
     const stations = await api
@@ -33,6 +33,7 @@ export default function Radio() {
         tag: stationFilter,
         limit: 500,
         name: searchText,
+        url: "https://all.api.radio-browser.info/json/servers",
       })
       .then((data) => {
         return data;
